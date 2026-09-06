@@ -13,9 +13,12 @@ BuildRequires:	pkgconfig(python)
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools)
 
-# Keep the pure-Python mapping so this stays noarch. The optional C
-# accelerator is not worth an arch-specific package for ACE-Step.
+# Keep the pure-Python mapping so this stays noarch. There is no
+# CPython 3.14 C source in 2.4.7. The env must be set in both
+# %build and %install — setup.py re-decides C vs py at install time.
 %build -p
+export FROZENDICT_PURE_PY=1
+%install -p
 export FROZENDICT_PURE_PY=1
 
 %description
