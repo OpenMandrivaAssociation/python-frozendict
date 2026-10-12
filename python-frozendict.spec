@@ -1,6 +1,6 @@
 Name:		python-frozendict
 Version:	2.4.7
-Release:	1
+Release:	2
 Summary:	Immutable dictionary implementation
 License:	LGPL-3.0
 Group:		Development/Python
